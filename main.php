@@ -68,13 +68,24 @@ while (count($inCorrectArray) < 3) {
     <main>
         <section>
 
-            <form action="./main.php?page=<?= $currentPage ?>" method="post" style=<?php $answer == 0 && $answer != null ? print "background-color:#c78787;" : ""; ?>>
+            <form action="./main.php?page=<?= $currentPage ?>" method="post" style=<?php $answer == 0 && $answer != null ? print "background-color:#f9c0c0;" : ""; ?>>
                 <?php if ($answer == 1 && $answer != null): ?>
-                    <h1 style="color: green;"> RIGHT!! the correct answer is <?= $correct[$currentPage]["name"]; ?> </h1>
+                    <section>
+                        <h1 style="color: green;"> 😊 RIGHT 😊 the word is <?= $correct[$currentPage]["name"]; ?>✅ </h1>
+                    </section>
+
                 <?php elseif ($answer == 0 && $answer != null): ?>
-                    <h1 style="color:red;"> Try Again!! </h1>
+                    <section>
+                        <h1 style="color:#642727; font-size:25px;"> ❌ Oops! Almost there! ❌ </h1>
+                    </section>
+                    <section>
+                        <h2>💡hint: The word starts with <strong style="color:green; font-size:25px;"><?= $correct[$currentPage]["name"][0]; ?> </strong></h2>
+                    </section>
+
+
+                    <!-- this was for submit for radio input (in case submit without choosing any word)  -->
                 <?php elseif (!isset($_REQUEST['word']) && isset($_REQUEST['submit'])): ?>
-                    <h1 style="color:red;"> please pick one word </h1>
+                    <!-- <h1 style="color:#642727;"> please pick one word </h1> -->
                 <?php endif; ?>
                 <fieldset>
                     <legend>Select a right WORD:</legend>
