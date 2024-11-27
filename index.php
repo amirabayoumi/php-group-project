@@ -18,7 +18,10 @@
 
 <body>
     <main>
-        <a href="./main.php?page=0"><i> PLay!</i></a>
+        <section>
+            <a href="./main.php?page=0"><i> Play!</i></a>
+        </section>
+
     </main>
 
 </body>

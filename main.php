@@ -68,7 +68,7 @@ while (count($inCorrectArray) < 3) {
     <main>
         <section>
 
-            <form action="./main.php?page=<?= $currentPage ?>" method="post">
+            <form action="./main.php?page=<?= $currentPage ?>" method="post" style=<?php $answer == 0 && $answer != null ? print "background-color:#c78787;" : ""; ?>>
                 <?php if ($answer == 1 && $answer != null): ?>
                     <h1 style="color: green;"> RIGHT!! the correct answer is <?= $correct[$currentPage]["name"]; ?> </h1>
                 <?php elseif ($answer == 0 && $answer != null): ?>
